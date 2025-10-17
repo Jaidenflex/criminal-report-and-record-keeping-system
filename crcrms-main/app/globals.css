@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to navy blue #1c1c84 and yellow #EAB308 color scheme */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.28 0.15 270);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.75 0.15 85);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.95 0 0);
+  --ring: oklch(0.28 0.15 270);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.15 0.02 270);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.28 0.15 270);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.2 0.02 270);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.25 0.02 270);
+  --sidebar-ring: oklch(0.28 0.15 270);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Updated color values to match #1c1c84 (28, 28, 132) and yellow #EAB308 (234, 179, 8) */
+  --color-background: 249 250 251;
+  --color-foreground: 17 24 39;
+
+  --color-card: 255 255 255;
+  --color-card-foreground: 17 24 39;
+
+  --color-popover: 255 255 255;
+  --color-popover-foreground: 17 24 39;
+
+  --color-primary: 28 28 132;
+  --color-primary-foreground: 255 255 255;
+
+  --color-secondary: 234 179 8;
+  --color-secondary-foreground: 255 255 255;
+
+  --color-muted: 243 244 246;
+  --color-muted-foreground: 107 114 128;
+
+  --color-accent: 243 244 246;
+  --color-accent-foreground: 17 24 39;
+
+  --color-destructive: 239 68 68;
+  --color-destructive-foreground: 255 255 255;
+
+  --color-border: 229 231 235;
+  --color-input: 243 244 246;
+  --color-ring: 28 28 132;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Increased base font size and input/button sizing for better readability */
+  html {
+    font-size: 17px;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply text-base h-12 px-4 py-3;
+  }
+
+  button {
+    @apply text-base h-12 px-6 py-3;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  /* Added dropdown styling for better contrast */
+  select {
+    @apply bg-white border-input text-foreground;
+  }
+
+  select option {
+    @apply bg-white text-foreground py-2;
+  }
+}
